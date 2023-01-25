@@ -1,0 +1,302 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
+
+*{margin: 0; top: 0;}
+
+body {
+    background-color: lightgray;
+}
+
+
+
+
+/* 1. box1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.box1 {
+    background-color: #fff;
+    margin-top: 100px;
+}
+.box1 .child {
+    width: 300px;
+    background-color: orangered;
+    margin: 0 auto; /* 상하 0 좌우 auto */
+    padding: 30px 0; /* 상하 30 좌우 0 */
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    border: 10px solid orangered;
+    /* transition-property: background-color;
+    변화를 줄건데 무슨 변화를 줄거냐
+    transition-property (속성변화)
+    transition-duration: 0.3s; 지속되는 시간
+    transition-delay: 0.2s; 시간 딜레이
+    transition-timing-function: cubic-bezier(0, -0.71, 1, -0.41); 
+    진행되는 시간 짧게됐다가 늘어뜨리는 형식 */
+
+
+    /* transition: background-color 0.3s 0.5s ease, */
+    /* 백그라운드컬러, 듀레이션, 딜레이, 타이밍펑션 */
+    /* 뒤에있는 값이 딜레이 값이다. */
+    /* transform 0.4s 0.8s ease; */
+    /* 듀레이션, 딜레이, 타이밍펑션 */
+    /* transition: 과 transform을 연결할때는 , 로 값을 구분 */
+
+    /* transition: all 0.3s 0.2s ease; */
+    /* 모든 영역, 듀레이션, 딜레이, 타이밍펑션 */
+
+
+    transition: 0.3s 0.3s
+    /* 듀레이션 - 지속되는시간
+    딜레이 - 지연되는시간 (몇초있다 시작할건지)
+    타이밍펑션 - 느리게가다가 빠르게 가는 형식 (조절가능) */
+}
+
+.box1:hover .child {
+    background-color: purple;
+    transform: translateY(-30px);
+    /* 호버가 될때 y축으로 -30px만큼 살짝 이동 */
+
+}
+
+
+
+/* 2. box2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.box2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 800;
+    width: 400px;
+    margin: 50px auto 0;
+    background-color: aquamarine;
+    color:#222;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+}
+
+
+.box2 p {
+    transform: translateX(-100%);
+    /* 포지션이 없어도 트렌스폼으로 이동가능하나,
+    블록요소만 가능하다. */
+    transition: 0.5s;
+}
+
+.box2 p.one{transition-delay: 0.3s;}
+.box2 p.two{transition-delay: 0.6s;}
+.box2 p.three{transition-delay: 0.9s;}
+.box2:hover p {
+    transform: translateX(0%);
+}
+
+
+
+/* 3. box3 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.box3 {background-color: chocolate;
+    font-size: 30px;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 50px;
+    /* position: relative; */
+    /* 애니메이션의 이름, keyframes의 이름과 반드시 동일 */
+    animation-name: box_ani; /* 애니메이션 이름 */
+    animation-duration: 2s; /* 몇초 동안 움직일건지 */
+    animation-iteration-count: 3; 
+    /* 애니메이션 반복횟수 */
+    /* 2 > 2회, infinite: 무한반복 */
+    animation-direction: nomal;
+    /* 애니메이션의 방향 */
+    /* nomal: 기본값, alternate: 정방향>역방향>정방향이동 */
+    /* alternate-reverse: 역방향시작>정방향>역방향이동 */
+    /* reverse: 시작 위치가 거꾸로 진행됨 */
+    animation-delay: 3s;
+    /* 몇초있다가 실행할건지, 애니메이션의 지연시간 */
+    animation-timing-function: linear;
+    /* 빨라졌다가 느려졌다가 하는 속도를 조절가능.
+    liner 속성: 일정한 속도로 흘러가게끔 해줌 */
+    animation-fill-mode: both;
+    /* 애니메이션의 처음과 끝의 상태 */
+    /* forwards 속성: 애니메이션이 끝난 지점에서 멈춤 */
+    /* (처음지점에서 시작하지 않고 살짝 띄워진상태에서 시작함) */
+    /* backward: 시작을 keyframes 0%인 상태에서부터 시작 */
+    /* backward + forward를 동시설정 = both 속성 */
+    /* ===> backward속성으로 0% 100px에서 시작하고, 
+    forward속성의 끝난 지점에서 멈춤 */
+}
+
+@keyframes box_ani { /* 애니메이션 이름과 똑같이 해야함 */
+    /* form{margin-left: 100px;} */ /* 시작지점 */ 
+    /* to{margin-left: 400px;} */ /* 도착지점 */ 
+
+    0%{margin-left: 100px;}
+    50%{margin-left: 200px;}
+    100%{margin-left: 500px;}
+
+    /* 시작지점과 끝지점 2가지로만 나뉠때는 form to로 설정
+    하지만, 구간구간 나눠야할때는 %로 나눠서 진행 */
+
+    /* ★★★중요★★★  */
+/* keyframes의 form, to 값은 애니메이션이 이동할려면 마진라이트로 줄수도 있지만 transform의 translate로
+값을 줘서 이동시킬수도 있다. */
+/* 기본 left, right 값으로 할려면 꼭 상위 position값이
+있어야만 애니메이션을 작동시킬수있다. */
+
+}
+
+
+/* 4. box4 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.box4 {
+    margin: 100px 0 400px;
+    font-size: 30px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: rgb(46, 49, 52);
+    color: #fff;
+
+    
+    /* animation-name: box_ani2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both; */
+    
+    /* ========>> 숏핸드 */
+    animation: box_ani2 4s linear 1s infinite normal both
+    /* 순서 : name / duration / timing-function / delay /
+    iteration-count / direction / fill-mode */
+
+}
+
+@keyframes box_ani2 {
+    0% {transform: translate(100px, 0);}
+    25% {transform: translate(300px, 0);}
+    50% {transform: translate(300px, 200px);}
+    75% {transform: translate(100px, 200px);}
+    100% {transform: translate(100px, 0);}
+}
+
+
+    /* ★★★중요★★★  */
+/* keyframes의 form, to 값은 애니메이션이 이동할려면 margin-left 마진레프트로 줄수도 있지만
+transform의 translate로 값을 줘서 이동시킬수도 있다. */
+/* 기본 left, right 값으로 할려면 꼭 상위 position값이
+있어야만 애니메이션을 작동시킬수있다. */
+
+
+
+
+/* 5. box5 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.약::after{content: ""; clear: both; display: block;}
+
+.box5 {
+    width: 1000px;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin: 0 auto;
+    perspective: 600px; /* 카메라 위치를 잡기 */
+    /* 보는 거리감을 어떻게 줄건지 설정 */
+    /* px값을 작게하면 제대로 돌아가지 않음
+    얼굴을 가까이 보는것처럼 얼굴을 침 */
+
+}
+.box5>div {
+    /* box5의 바로 밑에 div라는 뜻 (child1, child2만 선택됨) */
+    float: left;
+    width: 49%;
+    height: 300px;
+    background-color: cornflowerblue;
+
+}
+
+.box5>div.child_1 {
+    margin-right: 2%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* 3d형식으로 보이는 속성요소 (설정해야함) */
+
+}
+.box5>div.child_1 .ro {
+    background-color: blueviolet;
+    position: absolute;
+    left: 55%; top: 35%;
+    padding: 20px 30px;
+    font-size: 40px;
+    color: #fff;
+    transform: translateZ(300px) rotateY(45deg);
+    /* deg는 degree약자의 - 각도 */
+    /* rotateY로 설정하면 X로 회전을한다.
+    이유는 Y축 자체가 가운데 위아래 Y점이 중심이기때문에
+    [  중심  ] */
+    
+    /* rotateX로 설정하면 Y축으로 회전한다.
+    X축 왼쪽 오른쪽이 중심    중심[    ]중심 */
+    transform-origin: left center; /* X, Y값 */
+    
+}
+
+.box5>div.child_2 {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 600px; /* 카메라 위치를 다시설정함. */
+    /* box5 기준으로 카메라 위치가 설정되었기때문에
+    살짝 기울게끔 보였음 */
+}
+.box5>div.child_2 .top {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform:  translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+
+}
+.box5>div.child_2 .top div {
+    transform: translateY(100%) rotateX(-80deg);
+    transform-origin: center top; /* X, Y값 */
+    opacity: 0;
+    transition: 0.8s cubic-bezier(0.02, 0.29, 0, 1.13);
+    /* 0.8초 */
+}
+
+.box5>div.child_2:hover .top div {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2;
+}
+
+
+.box5>div.child_2:hover .top div:first-child {
+    /* top의 자식중 첫째를 부름 first-child */
+    
+}
+
+.box5>div.child_2:hover .top div:last-child {
+    /* top의 자식중에 둘째(막내)를 부름 last-child */
+    transition-delay: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

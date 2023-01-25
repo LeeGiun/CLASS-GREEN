@@ -1,0 +1,36 @@
+/* 1. warp1 ---------------------------------------------- */
+.section::after {
+    content: "\f4e3";
+    /* fontawesome 5버전을 CSS에서 사용하기 위해서는
+    font-family, font-weight가 같이 들어가야함. */
+    font-family: "Font Awesome 5 Free";
+    /* -> 무료버전 사용시엔 Pro에서 Free로 변경 */
+    font-weight: 900;
+    background-color: lightcyan;}
+    
+
+
+/* 2. warp2 ---------------------------------------------- */
+.wrap2 {
+    position: relative;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+    background-color: palevioletred;
+}
+.wrap2 .section2 {
+    position: absolute;
+    /* left: 50%; top: 50%; */
+    left: calc(50% - 50px); 
+    top: calc(50% - 50px);
+    /* 위로도 기재할 수 있으나 % 인데 px로
+    그냥 적으면 인식안됨
+    calc를 추가하여 계산하도록 추가필요 */
+    /* calc(50%; - 50px); 적을때도 - 를 붙이면 안됨. */
+
+    /* transform: translate(-50%, -50%); */
+    /* transform 대신 calc를 계산하여 중앙으로 맞출수 있음. */
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}

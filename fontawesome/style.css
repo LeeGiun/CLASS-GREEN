@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+.section::after {
+    content: "\f4e2";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* 먼저 슬릭을 셋팅하고나서 아래를 만들어야함.
+
+슬릭셋팅 */
+/* 
+1. slick 사이트 내 접속하여 위 메뉴 usage 클릭.
+2. Set up your HTML markup. 내용 아래에 있는
+div 클래스 모두 HTML에 붙여넣기.
+<div class="your-class">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
+
+3. slick cdn을 구글에 검색하여 
+https://cdnjs.com/libraries/slick-carousel
+
+slick.css 복사하여 
+https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css
+
+ */
+
+/* fontawesome < 구글 검색시 icons < 사용할 수 있는 다양한 아이콘이 있음.
+https://fontawesome.com/
+->https://fontawesome.com/v5/search?o=r&m=free
+연결하려면 CDN 연결해야함
+https://cdnjs.com/libraries/font-awesome
+첫번째 빨간색 링크 카피해서 붙여넣기
+필요없는건 다 지우면됨.
+
+1. fontawesome 구글 검색시 다양한 아이콘이 나옴.
+2. 홈페이지 맨 아래 All Versions 클릭.
+3. 버전 5 옆에  1,608 Free Icons 클릭
+4. 여러가지 아이콘이 있으며, 하나를 선택하여
+<i class="fas fa-wifi"></i> 복사하여 HTML 안에 붙여넣기
+<div class="wrap">
+<div class="section">
+    <i class="fas fa-wifi"></i>
+</div>
+</div>
+
+5. F12 개발자도구에서 아이콘을 누르게 되면
+.fa-wifi:before {
+    content: "\f1eb" 나오게되며,
+    \f1eb를 복사하여 CSS에 붙여넣기.
+
+6.  .section::after {
+    content: "\f4e2";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 9
+
+7. 아이콘을 개발자도구에서 다시 누르게되면
+    ::before 위에 있는 i calss에 
+    오른편에 있는
+    .fa, .fas {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    위 내용 가운데
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    만 복사하여 CSS .section 안에 붙여넣기
+
+8.뒤에 pro를 Free로 바꿔야 Live Server에
+    그림이 나오게 된다.
+
+
+
+*/

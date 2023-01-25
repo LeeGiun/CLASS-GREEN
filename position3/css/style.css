@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+*{margin: 0; top: 0;}
+ul, ol, li {list-style:none;}
+/* 숫자등 점 모두 안보이는 기능 (★실무에 많이 사용함) */
+.clear::after {content: ""; clear: both; display: block;}
+
+/* 1. 전체 #################################### */
+#전체 {background-color: coral;
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+    
+}
+
+
+/* 2. 첫째자식 ################################ */
+#전체 .첫째자식 {
+    background-color: chartreuse;
+    padding: 20px;
+}
+
+#전체 .첫째자식 .첫째손자 {
+    color: red;
+    background-color: darkmagenta;
+    height: 200px;
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#전체 .첫째자식 .wrap{
+    position: relative;
+}
+
+#전체 .첫째자식 .첫손2 {
+    background-color: green;
+    opacity: 0; /* 투명도 */
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    background-image: url(../img/img2.jpg)
+}
+#전체 .첫째자식:hover .첫손2 {
+    opacity: 1;
+    transition: 0.3;
+
+}
+
+
+/* 2. 둘째자식 ###################################### */
+
+#전체 .둘째자식 {
+    margin-top: 30px;
+    height: 200px;
+    padding: 20px;
+    background-color: lawngreen;
+    box-sizing: border-box; 
+    position: relative;
+    /* 박스안에 선까지 내영역안에 들어오게하는것. */
+}
+
+
+#전체 .둘째자식 .둘째손자 {
+    background-color: indigo;
+    /* 자식은 부모의 padding에 침범하지 못한다 */
+    position: absolute;
+    /* width: 100%; */ /* 기본값이다. > block요소라서 */
+    /* height: 100%; */
+    left: 0px; top: 0px;
+    reight: 0px; bottom: 0px;
+    width: 200px;
+    height: 100px;
+    /* w100%나 h100%와 위 left0, top0, right0, bottom0
+    주는것과 동일하다. */
+    /* 강제로 w와 h값을 px주어진다면 위 l0 t0 r0 t0 조건은
+    성립하지않는다. */
+}
+
+
+
+/* 3. 셋째자식 ######################################### */
+
+#전체 .둘째자식 {
+    margin-bottom: 50px;
+
+}
+    /* ★★★마진바텀 50과 마진탑 30이 있으면
+    탑이 상쇄되어 50만 나타나게된다.  */
+    /* ★★★다만, 좌 30 우 20 으로 할때는 값이 합쳐진다 */
+#전체 .셋째자식 {
+    margin-top: 30px;
+    background-color: #46C2CB;
+    
+}
+
+#전체 .셋째자식>div {
+    background-color: #FFBF00;
+    width: 40%;
+    margin: 0 5%; /* 상하 0 좌우 5% */
+    float: left;
+}
+
+
+/* ol, ul의 자식요소는 li만 가능하다. */
+#전체 .셋째자식 > div ol {
+    list-style: square;
+}
+#전체 .셋째자식 > div ul {
+    list-style: circle;
+}
+#전체 .셋째자식 > div li {
+    border: 1px solid gray;
+
+}
+
+#전체 .넷째자식 {
+    background-color: #FFBF00;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#전체 .넷째자식 .넷째손자 {
+    background-color: aquamarine;
+    
+}
+
+#전체 .넷째자식 .넷째손자 dt {
+    background-color: cadetblue;
+
+}
+#전체 .넷째자식 .넷째손자 dd {
+    background-color: darkkhaki;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

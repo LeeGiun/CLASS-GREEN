@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.wrap {
+    width: 800px;
+    margin: 0 auto;
+    background-color: pink;
+    padding: 200px 0;
+    margin-top: 50px;
+}
+.wrap>div {
+    height: 300px;
+    background-color: aqua;
+    border-top: 1px solid #222;
+}
+
+/* div+div는 내위에 형제를 의미함 */
+/* 1은 위에 부모가 있기때문에 성립하지 않으며,
+2,3,4만 위에 형이 있기때문에 성립함. */
+.wrap>div+div {
+    margin-top: 200px;
+
+}
+
+.wrap .section2 div{
+    margin-top: 50px;
+}
+
+/* ★★마진의 병합현상★★
+마진탑을 주게되면 영역 위에 모두 200px로 쌓여지는것으로 생각할 수 있으나, 실제로 실행해보면 맨 위 영역엔 빈공간으로 채워지며
+영역은 빈공간 그 아래부터 시작하게 된다. */
+
+/* 마진값이 겹쳐질경우 상/하인 경우 합쳐지게된다.
+값이 다를경우에는 큰값이 적용됨. */

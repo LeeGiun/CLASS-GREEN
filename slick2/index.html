@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 아래 link 태그는 slick을 연결하는 태그이다.
+    slick cdn을 검색하여 slick.css 복사하여
+    붙여넣고 필요없는건 지운다. -->
+    <!-- 슬릭을 연결하려면 필수로 넣어야함 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <!-- fontawesome cdn에서 빨간색 첫줄 복사하여
+    link 태그로 복사하여 붙여넣기
+    아래 태그는 fontawesome를 연결하는 태그이다
+    ★★★★★필수로 연결해야함★★★★★ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+    <!-- fontawesome cdn을 넣을때는 버전에 맞게 넣어야함! -->
+    <link rel="stylesheet" href="../slick2/css/style.css">
+    
+    <title> SLICK 2 </title>
+</head>
+<body>
+    <!-- .wrap>.container 단축어 <div class="wrap"> <div class="container"> </div>-->
+    <div class="wrap">
+        <div class="container">
+            <!-- slick 사이트 내 HTML 붙여넣는 
+            div 3개를
+            아래에 붙여넣고 이름 태그 이름 지우고
+            img 이미지를 붙여넣는다 -->
+            <div class="slick">
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/3NVdEJ4bIf7dw7uDma7tY10B4znTU3nX_1100.jpg">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/uTtt5GeqLMPgvdQocHVlPTqwPm01aa7U_1100.jpg">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/1KbKPrL6sWAk41js6O69WcdKXwaTeobK_1100.jpg">
+                </div>
+                    </div>
+                </div>
+            </div>
+            <!-- slick 사이트 내 jquery 를 붙여넣기. -->
+            <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            <!-- 연결된 <script>안에는 내용을 추가해선 안된다. 내용을 추가할때는 <script>를 추가하여 내용삽입 -->
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('.slick').slick({
+                        //setting - name: setting - value
+                        autoplay:true,
+                        //autoplay는 항상 false 이기때문에
+                        //true 값으로 바꿔줘야함.
+                        dots:true,
+                        //점모양 dots 페이지 점모양을 눌러서
+                        //이동하는걸 페이지 네이션이라고 한다.
+                    });
+                });
+            </script>
+        </body>
+</html>

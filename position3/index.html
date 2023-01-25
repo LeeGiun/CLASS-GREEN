@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../position3/css/style.css">
+    <title> POSITION TEST 3 </title>
+</head>
+<body>
+    <div id="전체">
+        <!-- .a>.b{첫째손자} -> a클래스 안에 b클래스 -->
+        <!-- 이름은 첫째손자 -->
+        <div class="첫째자식">
+            <div class="wrap">
+                <div class="첫째손자 첫손1">첫째손자1</div>
+                <div class="첫째손자 첫손2">첫째손자2</div>
+            </div>
+        </div>
+        <div class="둘째자식">
+            <div class="둘째손자">둘째손자</div>
+        </div>
+        <div class="셋째자식 clear">
+            <div class="셋째손자1">
+                <h4>정렬하는 요소들(순서 있는 List)</h4>
+                <!-- <ol></ol> 태그는 순서가 1.2.3. 생김 -->
+                <!-- <ul></ul> 태그는 순서는 점으로 구분 -->
+                <!-- /* ol, ul의 자식요소는 li만 가능. */ -->
+                <!-- ★★자주 사용하는 태그로 중요함★★ -->
+                <!-- ol, ul, li는 Block요소이다 -->
+                <ol>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ol>
+            </div>
+            <div class="셋째손자2">
+                <h4>정렬하는 요소들(순서가 없는 List)</h4>
+                <ul>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ul>
+            </div>
+        </div>
+        <div class="넷째자식">
+            <div class="넷째손자">
+                <dl>커피</dl>
+                <!-- <dt>태그 설명 대상의 문구, 제목 -->
+                <dd>검정색의 쓴맛의 액체</dd>
+                <!-- <dd>태그 설명 글 -->
+                <dl>사과</dl>
+                <dd>초겨울에 나오는 맛있는 과일</dd>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
